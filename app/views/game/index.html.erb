@@ -1,0 +1,13 @@
+<h1>Tic Tac Toe</h1>
+
+<table>
+  <% @board.state.each_slice(3).with_index do |row, i| %>
+    <tr>
+      <% row.each_with_index do |cell, j| %>
+        <td>
+          <%= link_to cell, play_path(i: i, j: j), method: :post %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
